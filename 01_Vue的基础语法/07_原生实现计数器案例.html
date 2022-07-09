@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>当前计数 <span class="counter"></span></h2>
+    <button class="add">+1</button>
+    <button class="sub">-1</button>
+
+    <script>
+      const h2El = document.querySelector('h2');
+      const addBtn = document.querySelector('.add');
+      const subBtn = document.querySelector('.sub');
+      const counterEl = document.querySelector('.counter');
+      let counter = 0;
+      counterEl.textContent = counter;
+      addBtn.addEventListener('click', function () {
+        counter++;
+        counterEl.textContent = counter;
+      });
+
+      subBtn.addEventListener('click', function () {
+        counter--;
+        counterEl.textContent = counter;
+      });
+    </script>
+  </body>
+</html>
