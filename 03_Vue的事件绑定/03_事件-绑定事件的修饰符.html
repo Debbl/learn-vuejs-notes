@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" v-on:click="divClick">
+        <button @click.stop="btnClick">按钮</button>
+      </div>
+      <a href="http://aiwan.run/" @click.prevent="aClick">about</a>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data: function () {
+          return {
+            counter: 0,
+          };
+        },
+        methods: {
+          divClick(event) {
+            console.log('div click');
+          },
+          btnClick() {
+            console.log('button click');
+          },
+          aClick() {
+            console.log('a click');
+          },
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" v-on:click="divClick"></div>
+      <div class="box" @click="divClick"></div>
+      <div class="box" @click="handleClick('debbl', 18)"></div>
+      <div class="box" @click="handleClick2('debbl', 18, $event)"></div>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data: function () {
+          return {
+            counter: 0,
+          };
+        },
+        methods: {
+          divClick(event) {
+            console.log('click', event);
+          },
+          handleClick(name, age) {
+            console.log('handleClick', name, age);
+          },
+          handleClick2(name, age, event) {
+            console.log('handleClick', name, age, event);
+          },
+          divMousemove() {
+            console.log('mousemove');
+          },
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>
