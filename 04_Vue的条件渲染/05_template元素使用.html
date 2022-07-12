@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <template v-if="Object.keys(info).length">
+        <h2>info</h2>
+        <ul>
+          <li>{{info.name}}</li>
+          <li>{{info.age}}</li>
+        </ul>
+      </template>
+
+      <template v-else>
+        <div>no info</div>
+        <p>please input info</p>
+      </template>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            // info: {
+            //   name: 'debbl',
+            //   age: 18,
+            // },
+            info: {},
+          };
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>
