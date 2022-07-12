@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{info.name}}</h2>
+      <h2>{{info.age}}</h2>
+      <button @click="changeInfo">change</button>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            info: { name: 'debbl', age: 18 },
+          };
+        },
+        watch: {
+          info: {
+            handler(newValue, oldValue) {
+              console.log(newValue === oldValue);
+              console.log('newValue: ', newValue);
+              console.log('oldValue: ', oldValue);
+            },
+            deep: true,
+            immediate: true,
+          },
+          'info.name': function (newValue, oldValue) {
+            console.log('==========================');
+            console.log(newValue, oldValue);
+          },
+        },
+        methods: {
+          changeInfo() {
+            // this.info = { name: 'foo', age: 19 };
+            this.info.name = 'foo';
+          },
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>
