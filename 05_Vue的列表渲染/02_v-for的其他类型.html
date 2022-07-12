@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        display: inline-block;
+        width: 100px;
+        background-color: skyblue;
+        margin-left: 3px;
+        margin-top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 遍历对象 -->
+      <div v-for="(value, key, index) in infos">
+        <span>{{key}}</span>
+        <span>{{" - "}}</span>
+        <span>{{value}}</span>
+        <span>{{" - "}}</span>
+        <span>{{index}}</span>
+      </div>
+
+      <!-- 遍历数字 -->
+      <div v-for="item in 10">{{item}}</div>
+      <hr />
+      <!-- 遍历字符串 -->
+      <div v-for="char in 'Hello'">{{char}}</div>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            infos: { name: 'debbl', age: 18, height: 1.88 },
+          };
+        },
+      });
+      app.mount('#app');
+    </script>
+  </body>
+</html>

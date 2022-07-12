@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item of letters" :key="item">{{item}}</li>
+      </ul>
+
+      <hr />
+      <ul>
+        <li v-for="item in products" :key="item.id">{{item.name}}</li>
+      </ul>
+      <button @click="addProduct">添加 product</button>
+      <button @click="addItem">添加</button>
+    </div>
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            letters: ['a', 'b', 'c', 'd'],
+            products: [
+              { id: 01, name: 'aaa' },
+              { id: 01, name: 'bbb' },
+              { id: 02, name: 'ccc' },
+            ],
+          };
+        },
+        methods: {
+          addItem() {
+            this.letters.splice(1, 0, 'f');
+            // this.letters.splice();
+          },
+          addProduct() {
+            this.products.splice(0, 0, { id: 01, name: 'ddd' });
+          },
+        },
+      });
+      app.mount('#app');
+    </script>
+  </body>
+</html>

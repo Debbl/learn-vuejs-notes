@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="name in names">{{name}}</li>
+      </ul>
+
+      <button @click="changeArray">修改数组</button>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            names: ['abc', 'nbc', 'nba'],
+          };
+        },
+        methods: {
+          changeArray() {
+            // this.names.push('debbl');
+            // this.names.pop();
+
+            // this.names.splice(1, 0, 'aaa');
+
+            // this.names.sort();
+            // this.names.reverse();
+
+            const newArr = this.names.map((item) => item + 'a');
+            this.names = newArr;
+          },
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>电影列表</h2>
+      <ul>
+        <li v-for="(movie, index) in movies">{{index+1}}-{{movie}}</li>
+      </ul>
+
+      <h2>商品列表</h2>
+      <div v-for="item in products">
+        <h3>{{item.name}}</h3>
+        <h3>{{item.price}}</h3>
+        <h3>{{item.desc}}</h3>
+      </div>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            movies: ['星际穿越', '大话西游', '哆啦A梦'],
+            products: [
+              { id: 110, name: 'MacBook', price: 9.9, desc: '九块九' },
+              { id: 111, name: 'iPhone', price: 19.9, desc: '十九块九' },
+              { id: 112, name: 'MI', price: 10.9, desc: '十块九' },
+            ],
+          };
+        },
+      });
+      app.mount('#app');
+    </script>
+  </body>
+</html>
