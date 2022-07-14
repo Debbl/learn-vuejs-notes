@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <select name="" id="" multiple size="2" v-model="fruits">
+        <option v-for="item in allFruits" :key="item.value" :value="item.value">
+          {{item.text}}
+        </option>
+      </select>
+      <h2>{{fruits}}</h2>
+
+      <div>
+        <template v-for="item of allHobbies">
+          <label :id="item.value">
+            <input
+              :id="item.value"
+              :value="item.value"
+              v-model="hobbies"
+              type="checkbox"
+            />
+            {{item.text}}
+          </label>
+        </template>
+        <h2>{{hobbies}}</h2>
+      </div>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            fruits: ['apple'],
+            allFruits: [
+              { value: 'apple', text: '苹果' },
+              { value: 'orange', text: '橘子' },
+              { value: 'banana', text: '香蕉' },
+            ],
+            hobbies: [],
+            allHobbies: [
+              { value: 'sing', text: '唱' },
+              { value: 'jump', text: '跳' },
+              { value: 'rap', text: 'rap' },
+              { value: 'basketball', text: '篮球' },
+            ],
+          };
+        },
+      });
+      app.mount('#app');
+    </script>
+  </body>
+</html>
