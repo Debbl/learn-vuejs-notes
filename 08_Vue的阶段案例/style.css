@@ -1,0 +1,19 @@
+table {
+  width: 600px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table thead {
+  background-color: #eee;
+}
+th,
+td {
+  padding:10px 10px;
+  border: 1px solid black;
+}
+.counter {
+  padding: 0 3px;
+}
+tr.active {
+  background-color: skyblue;
+}
