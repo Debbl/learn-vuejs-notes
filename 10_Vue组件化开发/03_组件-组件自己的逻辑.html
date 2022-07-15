@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{message}}</h2>
+      <child-con></child-con>
+      <child-con></child-con>
+      <child-con></child-con>
+    </div>
+
+    <template id="childCon">
+      <h3 :style="{color: isActive ? 'red' : ''}" @click="handelClick">
+        {{title}}
+      </h3>
+    </template>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Hello',
+          };
+        },
+      });
+      const childCon = {
+        template: '#childCon',
+        data() {
+          return {
+            title: '标题',
+            isActive: false,
+          };
+        },
+        methods: {
+          handelClick() {
+            this.isActive = !this.isActive;
+            console.log(this.isActive);
+          },
+        },
+      };
+      app.component('child-con', childCon);
+      app.mount('#app');
+    </script>
+  </body>
+</html>

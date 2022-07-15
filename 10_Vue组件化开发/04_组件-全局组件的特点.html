@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{message}}</h2>
+      <child-con1></child-con1>
+      <child-con1></child-con1>
+      <child-con1></child-con1>
+      <hr />
+      <child-con2></child-con2>
+      <child-con2></child-con2>
+      <child-con2></child-con2>
+    </div>
+
+    <script src="../lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Hello',
+          };
+        },
+      });
+      // 所有的地方都可以使用全局的组件
+      const ChildCon1 = {
+        template: `
+        <h2 style="color: red">{{title}}</h2>
+        <child-con2 />
+        <child-con2 />
+        <child-con2 />
+      `,
+        data() {
+          return {
+            title: '子组件一',
+          };
+        },
+      };
+      const ChildCon2 = {
+        template: `
+        <h2>{{title}}</h2>
+      `,
+        data() {
+          return {
+            title: '子组件二',
+          };
+        },
+      };
+
+      app.component('child-con1', ChildCon1);
+      app.component('child-con2', ChildCon2);
+      app.mount('#app');
+    </script>
+  </body>
+</html>
