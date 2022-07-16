@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 目标代码
+    "module": "esnext", // 模块 最新的 es 版本
+    "baseUrl": "./", // src 路径
+    "moduleResolution": "node", // 模块的查找顺序 node_modules
+    "paths": {
+      "@/*": ["src/*"],
+      "utils/*": ["src/utils/*"]
+    },
+    "lib": [
+      // 可能会用到的库
+      "esnext",
+      "dom",
+      "dom.iterable", // DOM 迭代器
+      "scripthost" // 浏览器的一些特殊的 API 提示
+    ]
+  }
+}
