@@ -26,3 +26,6 @@
 ## 07_组件插槽-作用域插槽
 - slotProps
 - 如果我们的插槽是默认插槽default，那么在使用的时 v-slot:default="slotProps",可以简写为v-slot="slotProps"
+
+## 08_Provide和inject
+- 当要放回的数据需要使用 `this` 是，provide 要写成一个函数，保证 `this` 的指向正确
