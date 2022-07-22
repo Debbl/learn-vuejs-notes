@@ -71,3 +71,11 @@
 - defineAsyncComponent
     - 工厂函数， 返回一个 Promise 对象
     - 对象
+
+## 15_组件的v-model
+```template
+    <counter :model-value='appCounter' @update:model-value='appCounter = $event' />
+    <!-- 相当于 -->
+    <counter v-model='appCounter' />
+```
+- 绑定多个属性可以使用 `v-model:name='appName'` 自定义名称
