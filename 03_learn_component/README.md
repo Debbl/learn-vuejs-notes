@@ -58,3 +58,11 @@
 
 ## 12_动态组件的使用
 - `<component :is="" />`
+
+## 13_Keep-Alive的使用
+- include
+- exclude
+- max
+- 缓存的生命周期
+    - activated
+    - deactivated
