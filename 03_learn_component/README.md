@@ -79,3 +79,5 @@
     <counter v-model='appCounter' />
 ```
 - 绑定多个属性可以使用 `v-model:name='appName'` 自定义名称
+
+## 16_组件的混入 mixin

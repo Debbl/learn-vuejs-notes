@@ -24,7 +24,9 @@ import { createApp } from 'vue';
 
 // import App from './14_异步组件的使用/App.vue';
 
-import App from './15_组件的v-model/App.vue';
+// import App from './15_组件的v-model/App.vue';
+
+import App from './16_组件的混入Mixin/App.vue';
 
 // console.log(sum(10, 20));
 
