@@ -66,3 +66,8 @@
 - 缓存的生命周期
     - activated
     - deactivated
+
+## 14_异步组件的使用
+- defineAsyncComponent
+    - 工厂函数， 返回一个 Promise 对象
+    - 对象

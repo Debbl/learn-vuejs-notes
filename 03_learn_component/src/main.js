@@ -1,4 +1,6 @@
 import { createApp } from 'vue';
+
+// import { sum } from './utils/math';
 // import App from './App.vue'
 // import App from './01_组件的嵌套使用/App.vue';
 
@@ -18,6 +20,14 @@ import { createApp } from 'vue';
 // import App from './11_ref获取元素组件/App.vue';
 
 // import App from './12_动态组件的使用/App.vue';
-import App from './13_Keep-Alive的使用/App.vue';
+// import App from './13_Keep-Alive的使用/App.vue';
+
+import App from './14_异步组件的使用/App.vue';
+
+// console.log(sum(10, 20));
+
+// import('./utils/math').then((res) => {
+//   console.log(res.sum(10, 1));
+// });
 
 createApp(App).mount('#app');
