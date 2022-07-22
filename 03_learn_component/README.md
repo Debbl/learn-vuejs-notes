@@ -32,3 +32,21 @@
 
 ## 09_事件总线的使用
 - 组件销毁时，最好移除事件的监听
+
+## 10_生命周期函数演练
+> - https://vuejs.org/guide/essentials/lifecycle.html
+- beforeCreate
+    - 创建组件实例
+- created
+    - template 模板编译
+- beforeMount
+    - 挂载到虚拟DOM -> 虚拟 DOM -> 真实 DOM -> display
+- mounted
+    - 响应式数据更新
+- beforeUpdate
+    - 根据新的数据生成新的 VNode，生成新的虚拟 DOM -> 真实 DOM
+- updated
+- beforeUnmount
+    - 将虚拟 DOM 中 VNode 从虚拟 DOM 移除
+- unmounted
+    - 将组件实例销毁，取消事件监听
