@@ -13,6 +13,8 @@ import { createApp } from 'vue';
 // import App from './08_Provide和Inject/App.vue';
 // import App from './09_事件总线的使用/App.vue';
 
-import App from './10_生命周期函数演练/App.vue';
+// import App from './10_生命周期函数演练/App.vue';
+
+import App from './11_ref获取元素组件/App.vue';
 
 createApp(App).mount('#app');
