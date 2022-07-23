@@ -30,3 +30,5 @@
     - `val =  isRef(val) ? val.value : val`
 - shallowRef
 - triggerRef
+
+## 05_setup中的computed
