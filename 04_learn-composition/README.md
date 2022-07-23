@@ -21,3 +21,12 @@
 ## 03_setup其他函数
 - readonly
     - 单向数据流，子组件不能更改父组件传来的数据，是只读的，通过事件传给父组件修改，避免其他的子组件修改数据，无法追踪数据的修改。
+
+## 04_setup中的toRefs
+- toRefs
+- toRef
+- isRef
+- unRef
+    - `val =  isRef(val) ? val.value : val`
+- shallowRef
+- triggerRef
