@@ -13,6 +13,7 @@ import { createApp } from 'vue';
 // import App from './07_setup生命周期函数/App.vue';
 
 // import App from './08_setup-Provide-Inject/App.vue';
-import App from './09_setup侦听数据变化/App.vue';
+// import App from './09_setup侦听数据变化/App.vue';
+import App from './10_setup-hooks练习/App.vue';
 
 createApp(App).mount('#app');
