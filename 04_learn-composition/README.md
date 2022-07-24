@@ -36,3 +36,11 @@
 ## 06_setup函数中引用ref
 - 元素
 - 组件实例
+
+## 07_setup生命周期函数
+- onBeforeMount
+- onMounted
+- onBeforeUpdate
+- onUpdated
+- onBeforeUnmounted
+- onUnmount
