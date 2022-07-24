@@ -46,3 +46,7 @@
 - onUnmount
 
 ## 08_setup-Provide-Inject
+
+## 09_setup侦听数据变化
+- watch
+- watchEffect
