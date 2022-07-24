@@ -1,43 +1,25 @@
 <template>
   <div class="app">
     <h2>App</h2>
-    <h2>message - {{ message }}</h2>
-    <button @click="message = 'foo'">change message</button>
-    <h2>info - {{ info }}</h2>
-    <button @click="info.name = 'bar'">change info</button>
+    <h2>counter - {{ counter }}</h2>
+    <button @click="counter++">+</button>
   </div>
 </template>
 
 <script>
-import { reactive, ref, watch } from 'vue';
+import { reactive, ref, watch, watchEffect } from 'vue';
 export default {
   setup() {
-    const message = ref("Hello World");
-    const info = reactive({
-      name: "debbl",
-      age: 18,
-    })
-
-    // 监听数据变化
-    watch(message, (newValue, oldValue) => {
-      console.log(message);
-      console.log(newValue, oldValue);
-    }, {
-      immediate: true,
-    })
-    watch(info, (value, oldValue) => {
-      console.log(value, oldValue);
-    })
-
-    watch(() => info, () => {
-      console.log("OK");
-    }, {
-      immediate: true,
-      deep: true,
+    const counter = ref(0);
+    // 自动收集依赖
+    const watchStopHandle = watchEffect(() => {
+      console.log("OK", counter.value);
+      if (counter.value > 10 ) {
+        watchStopHandle();
+      }
     })
     return {
-      message,
-      info,
+      counter,
     }
   }
 }
