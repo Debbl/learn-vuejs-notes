@@ -7,6 +7,8 @@ import { createApp } from 'vue';
 // import App from './03_setup其他函数/App.vue';
 // import App from './04_setup中的toRefs/App.vue';
 
-import App from './05_setup中的computed/App.vue';
+// import App from './05_setup中的computed/App.vue';
+
+import App from './06_setup函数中引用ref/App.vue'
 
 createApp(App).mount('#app');

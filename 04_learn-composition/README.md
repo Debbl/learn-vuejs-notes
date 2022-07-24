@@ -32,3 +32,7 @@
 - triggerRef
 
 ## 05_setup中的computed
+
+## 06_setup函数中引用ref
+- 元素
+- 组件实例
