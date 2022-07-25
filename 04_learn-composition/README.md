@@ -52,3 +52,8 @@
 - watchEffect
 
 ## 10_setup-hooks练习
+
+## 11_script-setup语法
+- defineProps
+- defineEmits
+- defineExpose

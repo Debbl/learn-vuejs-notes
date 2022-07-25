@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp } from "vue";
 // import App from './App.vue'
 
 // import App from './01_setup函数体验/App.vue';
@@ -14,6 +14,7 @@ import { createApp } from 'vue';
 
 // import App from './08_setup-Provide-Inject/App.vue';
 // import App from './09_setup侦听数据变化/App.vue';
-import App from './10_setup-hooks练习/App.vue';
+// import App from './10_setup-hooks练习/App.vue';
+import App from "./11_script-setup语法/App.vue";
 
-createApp(App).mount('#app');
+createApp(App).mount("#app");
