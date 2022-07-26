@@ -50,6 +50,14 @@ const routes = [
     path: "/:pathMatch(.*)*",
     component: () => import("../views/NotFound.vue"),
   },
+  {
+    path: "/order",
+    component: () => import("../views/Order.vue"),
+  },
+  {
+    path: "/login",
+    component: () => import("../views/Login.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -73,5 +81,17 @@ if (isAdmin) {
 }
 
 console.log(router.getRoutes());
+
+router.beforeEach((to, from) => {
+  // return false;
+  // 1. 跳转的 ->  /login
+  // console.log("to-----", to);
+  // console.log("from---", from);
+  // if (to.path !== "/login") return "/login";
+
+  const token = localStorage.getItem("token");
+
+  if (to.path === "/order" && !token) return "/login";
+});
 
 export default router;

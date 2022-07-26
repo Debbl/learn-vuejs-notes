@@ -24,6 +24,7 @@
 
     <button @click="btnClick">跳转到首页</button>
     <button @click="aboutBtnClick">跳转到关于</button>
+    <router-link to="/order">订单</router-link>
     <router-view />
   </div>
 </template>

@@ -13,3 +13,7 @@
 - removeRoute
 - 调用`addRoute`的返回值
 - 获取所有路由映射对象 `getRoutes()`
+
+## 路由导航守卫
+> - https://next.router.vuejs.org/zh/guide/advanced/navigation-guards.html
+- router.beforeEach

@@ -3,6 +3,8 @@ import App from "./App.vue";
 
 import router from "./router";
 
+// localStorage.setItem("token", "aaabbbccc");
+
 const app = createApp(App);
 app.use(router);
 
