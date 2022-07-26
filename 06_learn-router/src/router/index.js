@@ -11,7 +11,7 @@ const routes = [
   // { path: "/", redirect: "/home" },
   // { path: "/home", component: Home },
   // { path: "/about", component: About },
-  { path: "/", component: "/home" },
+  { path: "/", redirect: "/home" },
   {
     name: "home",
     path: "/home",
@@ -57,5 +57,21 @@ const router = createRouter({
   history: createWebHashHistory(),
   // history: createWebHistory(),
 });
+
+let isAdmin = true;
+if (isAdmin) {
+  // 一级路由
+  router.addRoute({
+    path: "/admin",
+    component: () => import("../views/Admin.vue"),
+  });
+
+  router.addRoute("home", {
+    path: "vip",
+    component: () => import("../views/HomeVip.vue"),
+  });
+}
+
+console.log(router.getRoutes());
 
 export default router;
