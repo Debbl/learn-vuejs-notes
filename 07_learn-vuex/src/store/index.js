@@ -11,6 +11,8 @@ const store = createStore({
       { id: 102, name: "foo02", age: 30 },
       { id: 103, name: "foo03", age: 20 },
     ],
+    banners: [],
+    recommends: [],
   }),
   getters: {
     doubleAge(state) {
@@ -32,6 +34,55 @@ const store = createStore({
     },
     incrementAge(state, payload = 1) {
       state.age += payload;
+    },
+    increment(state) {
+      state.counter++;
+    },
+    changeBanners(state, banners) {
+      state.banners = banners;
+    },
+    changeRecommends(state, recommends) {
+      state.recommends = recommends;
+    },
+  },
+  actions: {
+    incrementAction(context) {
+      // console.log(context.commit);
+      // console.log(context.getters);
+      console.log("increment action");
+      context.commit("increment");
+    },
+    changeNameAction(context, payload) {
+      console.log(payload);
+      context.commit("changeName");
+    },
+    async fetchHomeMultiDataAction(context) {
+      // 1. Promise then 嵌套
+      // fetch("http://123.207.32.32:8000/home/multidata").then((res) => {
+      //   console.log(res);
+      //   res.json().then((data) => {
+      //     console.log(data);
+      //   });
+      // });
+
+      // 2. return Promise
+      // fetch("http://123.207.32.32:8000/home/multidata")
+      //   .then((res) => {
+      //     return res.json();
+      //   })
+      //   .then((data) => {
+      //     console.log(data);
+      //   });
+
+      // 3. async await
+      return new Promise(async (resolve, reject) => {
+        const res = await fetch("http://123.207.32.32:8000/home/multidata");
+        const data = await res.json();
+        console.log(data);
+        resolve("aaa");
+        context.commit("changeBanners", data.data.banner);
+        context.commit("changeRecommends", data.data.recommend);
+      });
     },
   },
 });
