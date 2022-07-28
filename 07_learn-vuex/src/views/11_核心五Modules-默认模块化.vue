@@ -5,8 +5,7 @@
     <button @click="fetchDataAction">fetch home data</button>
     <h2>counter - count - {{ $store.state.counter.count }}</h2>
     <h2>
-      counter - getters - doubleCounter -
-      {{ $store.getters["counter/doubleCounter"] }}
+      counter - getters - doubleCounter - {{ $store.getters.doubleCounter }}
     </h2>
     <button @click="incrementCount">counter action</button>
     <ul>
@@ -26,7 +25,7 @@ export default {
       });
     },
     incrementCount() {
-      this.$store.dispatch("counter/incrementCountAction");
+      this.$store.dispatch("incrementCountAction");
     },
   },
 };

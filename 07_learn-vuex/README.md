@@ -18,3 +18,7 @@
 - mutations 中必须执行的是同步的函数，避免 devtool 无法记录状态变化的快照
 
 ## actions
+- Action 通常是异步的，网络请求等操作
+
+## modules
+- 命名空间

@@ -1,9 +1,13 @@
 import { createStore } from "vuex";
 import { CHANGE_NAME } from "./mutation_types";
 
+import HomeModule from "./modules/home";
+import CounterModule from "./modules/counter";
+
 const store = createStore({
   state: () => ({
-    counter: 99,
+    // counter: 99,
+    rootCounter: 99,
     name: "debbl",
     age: 18,
     friends: [
@@ -56,34 +60,38 @@ const store = createStore({
       console.log(payload);
       context.commit("changeName");
     },
-    async fetchHomeMultiDataAction(context) {
-      // 1. Promise then 嵌套
-      // fetch("http://123.207.32.32:8000/home/multidata").then((res) => {
-      //   console.log(res);
-      //   res.json().then((data) => {
-      //     console.log(data);
-      //   });
-      // });
+    // async fetchHomeMultiDataAction(context) {
+    //   // 1. Promise then 嵌套
+    //   // fetch("http://123.207.32.32:8000/home/multidata").then((res) => {
+    //   //   console.log(res);
+    //   //   res.json().then((data) => {
+    //   //     console.log(data);
+    //   //   });
+    //   // });
 
-      // 2. return Promise
-      // fetch("http://123.207.32.32:8000/home/multidata")
-      //   .then((res) => {
-      //     return res.json();
-      //   })
-      //   .then((data) => {
-      //     console.log(data);
-      //   });
+    //   // 2. return Promise
+    //   // fetch("http://123.207.32.32:8000/home/multidata")
+    //   //   .then((res) => {
+    //   //     return res.json();
+    //   //   })
+    //   //   .then((data) => {
+    //   //     console.log(data);
+    //   //   });
 
-      // 3. async await
-      return new Promise(async (resolve, reject) => {
-        const res = await fetch("http://123.207.32.32:8000/home/multidata");
-        const data = await res.json();
-        console.log(data);
-        resolve("aaa");
-        context.commit("changeBanners", data.data.banner);
-        context.commit("changeRecommends", data.data.recommend);
-      });
-    },
+    //   // 3. async await
+    //   return new Promise(async (resolve, reject) => {
+    //     const res = await fetch("http://123.207.32.32:8000/home/multidata");
+    //     const data = await res.json();
+    //     console.log(data);
+    //     resolve("aaa");
+    //     context.commit("changeBanners", data.data.banner);
+    //     context.commit("changeRecommends", data.data.recommend);
+    //   });
+    // },
+  },
+  modules: {
+    home: HomeModule,
+    counter: CounterModule,
   },
 });
 
