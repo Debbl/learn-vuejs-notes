@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import { CHANGE_NAME } from "./mutation_types";
 
 const store = createStore({
   state: () => ({
@@ -23,6 +24,14 @@ const store = createStore({
     },
     getFriendByID(state) {
       return (id) => state.friends.find((friend) => friend.id === id);
+    },
+  },
+  mutations: {
+    [CHANGE_NAME](state) {
+      state.name = "foo";
+    },
+    incrementAge(state, payload = 1) {
+      state.age += payload;
     },
   },
 });
