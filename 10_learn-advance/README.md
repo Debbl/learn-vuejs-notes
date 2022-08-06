@@ -60,3 +60,9 @@ app.directives("fTime", {
 
 - teleport
 - suspence
+
+## 03_安装插件
+
+- 函数 `function(app) {}`
+- 对象 `{install(app) {}}`
+
