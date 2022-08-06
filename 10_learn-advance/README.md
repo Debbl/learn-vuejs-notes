@@ -56,3 +56,7 @@ app.directives("fTime", {
 })
 ```
 
+## 02_其它内置组件
+
+- teleport
+- suspence
