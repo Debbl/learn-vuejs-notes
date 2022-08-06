@@ -66,3 +66,12 @@ app.directives("fTime", {
 - 函数 `function(app) {}`
 - 对象 `{install(app) {}}`
 
+## 04_Render函数
+
+## 05_JSX语法
+
+- Vue/cli
+  - https://github.com/vuejs/babel-plugin-jsx
+- vite
+  - https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx#readme
+
