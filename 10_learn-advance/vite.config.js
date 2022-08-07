@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx({
-      include: [/\.[jt]sx$/, /.vue$/],
+      // include: [/\.[jt]sx$/, /.vue$/],
     }),
   ],
   resolve: {

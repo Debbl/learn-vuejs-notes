@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.4",
+    "underscore": "^1.13.4",
     "vue": "^3.2.37"
   },
   "devDependencies": {

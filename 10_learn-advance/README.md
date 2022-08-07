@@ -75,3 +75,13 @@ app.directives("fTime", {
 - vite
   - https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx#readme
 
+## 06_过渡动画
+
+- transition
+  - v-enter-from
+  - v-enter-actiove
+  - v-enter-to
+  - v-leave-from
+  - v-leave-avtive
+  - v-leave-to
+- transition-group
